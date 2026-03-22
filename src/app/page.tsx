@@ -20,7 +20,7 @@ export default async function DashboardPage() {
   const tomorrowStr = tomorrow.toISOString();
 
   // Today's orders
-  const todayOrders = db
+  const todayOrders = await db
     .select()
     .from(orders)
     .where(and(gte(orders.createdAt, todayStr), lt(orders.createdAt, tomorrowStr)))
@@ -39,7 +39,7 @@ export default async function DashboardPage() {
   }
 
   // Recent orders (last 10)
-  const recentOrders = db
+  const recentOrders = await db
     .select()
     .from(orders)
     .orderBy(sql`${orders.createdAt} DESC`)
@@ -47,7 +47,7 @@ export default async function DashboardPage() {
     .all();
 
   // Total products
-  const productCount = db
+  const productCount = await db
     .select({ count: sql<number>`count(*)` })
     .from(products)
     .where(eq(products.isAvailable, 1))
@@ -64,7 +64,7 @@ export default async function DashboardPage() {
     const nextD = new Date(d);
     nextD.setDate(nextD.getDate() + 1);
     const nextDStr = nextD.toISOString();
-    const dayOrders = db
+    const dayOrders = await db
       .select()
       .from(orders)
       .where(and(gte(orders.createdAt, dStr), lt(orders.createdAt, nextDStr)))

@@ -11,7 +11,7 @@ import { ProductForm } from "@/components/products/product-form";
 export const dynamic = "force-dynamic";
 
 export default async function ProductsPage() {
-  const allProducts = db
+  const allProducts = await db
     .select()
     .from(products)
     .orderBy(sql`${products.sortOrder} ASC`)

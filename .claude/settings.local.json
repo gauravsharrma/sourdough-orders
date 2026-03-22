@@ -5,7 +5,17 @@
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
       "Bash(printf \"No\\\\nYes\\\\n\")",
-      "Bash(yes)"
+      "Bash(yes)",
+      "Bash(npm install:*)",
+      "Bash(npx drizzle-kit:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npx next:*)",
+      "Bash(DATABASE_URL=\"libsql://sourdough-orders-gauravsharrma00.aws-ap-south-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQxODEyMjgsImlkIjoiMDE5ZDE1NzAtMzcwMS03OGUwLWE3YTgtYTRlOTIyODYzMjAzIiwicmlkIjoiZDMyMTU5ZDYtNzJiMi00N2U1LTk0MGItMTNiYTMzNmI0MGZhIn0.CQIoPbAqLoCSdc90ipBoXR4l4DYNmdlHqVE7lInjtr6MfhFFPlM4vUVA7zWpmutVQJ7iSvRGzFGikIZB8krqCQ\" npx drizzle-kit push)",
+      "Bash(DATABASE_URL=\"libsql://sourdough-orders-gauravsharrma00.aws-ap-south-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQxODEyMjgsImlkIjoiMDE5ZDE1NzAtMzcwMS03OGUwLWE3YTgtYTRlOTIyODYzMjAzIiwicmlkIjoiZDMyMTU5ZDYtNzJiMi00N2U1LTk0MGItMTNiYTMzNmI0MGZhIn0.CQIoPbAqLoCSdc90ipBoXR4l4DYNmdlHqVE7lInjtr6MfhFFPlM4vUVA7zWpmutVQJ7iSvRGzFGikIZB8krqCQ\" npx tsx scripts/seed.ts)",
+      "Bash(gh auth:*)",
+      "Bash(winget install:*)",
+      "Bash(export PATH=\"/c/Program Files/GitHub CLI:$PATH\")",
+      "Bash(gh repo:*)"
     ]
   }
 }

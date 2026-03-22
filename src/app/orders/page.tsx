@@ -19,7 +19,7 @@ export default async function OrdersPage({
 }) {
   const params = await searchParams;
 
-  let allOrders = db
+  let allOrders = await db
     .select()
     .from(orders)
     .orderBy(desc(orders.createdAt))
@@ -43,7 +43,7 @@ export default async function OrdersPage({
   // Get item counts per order
   const itemCounts: Record<number, number> = {};
   for (const order of allOrders) {
-    const items = db
+    const items = await db
       .select()
       .from(orderItems)
       .where(eq(orderItems.orderId, order.id))

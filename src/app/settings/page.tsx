@@ -7,7 +7,7 @@ import { SettingsForm } from "@/components/settings/settings-form";
 export const dynamic = "force-dynamic";
 
 export default async function SettingsPage() {
-  const allSettings = db.select().from(settings).all();
+  const allSettings = await db.select().from(settings).all();
   const settingsMap: Record<string, string> = {};
   for (const s of allSettings) {
     settingsMap[s.key] = s.value;

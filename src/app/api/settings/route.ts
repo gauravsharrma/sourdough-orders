@@ -5,7 +5,7 @@ import { eq } from "drizzle-orm";
 
 export async function GET() {
   try {
-    const allSettings = db.select().from(settings).all();
+    const allSettings = await db.select().from(settings).all();
     const map: Record<string, string> = {};
     for (const s of allSettings) {
       map[s.key] = s.value;
@@ -22,11 +22,11 @@ export async function PATCH(request: NextRequest) {
 
     for (const [key, value] of Object.entries(body)) {
       if (typeof value !== "string") continue;
-      const existing = db.select().from(settings).where(eq(settings.key, key)).get();
+      const existing = await db.select().from(settings).where(eq(settings.key, key)).get();
       if (existing) {
-        db.update(settings).set({ value }).where(eq(settings.key, key)).run();
+        await db.update(settings).set({ value }).where(eq(settings.key, key)).run();
       } else {
-        db.insert(settings).values({ key, value }).run();
+        await db.insert(settings).values({ key, value }).run();
       }
     }
 

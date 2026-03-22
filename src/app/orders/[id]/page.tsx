@@ -19,13 +19,13 @@ export default async function OrderDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const order = db.select().from(orders).where(eq(orders.id, parseInt(id))).get();
+  const order = await db.select().from(orders).where(eq(orders.id, parseInt(id))).get();
 
   if (!order) {
     notFound();
   }
 
-  const items = db
+  const items = await db
     .select()
     .from(orderItems)
     .where(eq(orderItems.orderId, order.id))
